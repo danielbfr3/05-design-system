@@ -35,5 +35,12 @@ const config: StorybookConfig = {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap" rel="stylesheet">    
     ${head}
   `,
+  viteFinal: async (config, { configType }) => {
+    if (configType === "PRODUCTION") {
+      config.base = "/05-design-system/";
+    }
+
+    return config;
+  },
 };
 export default config;
