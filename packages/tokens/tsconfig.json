@@ -1,5 +1,5 @@
 {
-    "extends": "@ignite-ui/ts-config/base.json",
+    "extends": "@spiegelsoft/ts-config/base.json",
     "include": [
         "src"
     ]
