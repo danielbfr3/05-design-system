@@ -1,5 +1,6 @@
 import { ComponentProps } from '@stitches/react'
 import { Input, Prefix, TextInputContainer } from './styles'
+import { forwardRef, ElementRef } from 'react'
 
 export interface TextInputProps extends ComponentProps<typeof Input> {
   prefix?: string
@@ -7,16 +8,16 @@ export interface TextInputProps extends ComponentProps<typeof Input> {
   placeholder?: string
 }
 
-export function TextInput({
+export const TextInput = forwardRef<ElementRef<typeof Input>, TextInputProps>(({
   prefix,
   disabled = false,
   ...props
-}: TextInputProps) {
+}: TextInputProps, ref) => {
   return (
     <TextInputContainer>
       {!!prefix && <Prefix>{prefix}</Prefix>}
 
-      <Input disabled={disabled} {...props} />
+      <Input ref={ref} disabled={disabled} {...props} />
     </TextInputContainer>
   )
-}
+})

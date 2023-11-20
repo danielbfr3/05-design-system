@@ -5,6 +5,12 @@ export default {
   title: 'Form/TextInput',
   component: TextInput,
   args: {},
+  argTypes: {
+    size: {
+      options: ['sm', 'md'],
+      control: { type: 'inline-radio' },
+    },
+  },
   decorators: [
     (Story) => {
       return (
